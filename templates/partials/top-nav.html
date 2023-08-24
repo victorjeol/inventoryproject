@@ -1,0 +1,70 @@
+<br>
+<br>
+<br>
+
+<div class="container">
+   <div class="row" >
+       <div class="col-md-12" >
+          <div class="container">
+              <div class="row">
+                  <div  class="col-md-4">
+                  
+
+
+<div style="height:180px;" class="card text-center">
+  <div class="card-header bg-primary text-warning">
+    Information
+  </div>
+ <div style="margin-top:50px;" class="slider">
+      <a href="#"><div class="text">
+        <h5 class="links" >It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem <h5>
+      </div></a>
+    </div>
+</div>
+                  </div>
+                  
+
+<div class="col-md-8">
+
+    <div class="card text-center">
+        <div class="card-header bg-primary text-warning">
+            Statistics
+        </div>
+        <div  class="container">
+            <div class="row">
+                <div style="width:30% ; margin:15px auto;" class=" col-md-4 bg-light shadow p-3 mb-5 bg-body rounded">
+                  <a class="links" href="{% url 'staff' %}">
+                     <div style="width:100% ; "class="box" > <h5>Staff</h5>
+                         <h5>{{ workers_count }}</h5>
+                     </div>
+                  </a>
+                </div>
+                <div style="width:30% ;margin:15px auto;" class="box col-md-4 bg-light shadow p-3 mb-5 bg-body rounded">
+                <a class="links" href="{% url 'product' %}">
+                     <div style="width:100% ; "class="box"> <h5>Products</h5>
+                         <h5>{{ product_count }}</h5>
+                     </div>
+                  </a>
+                </div>
+                <div style="width:30% ;margin:15px auto ;" class="box col-md-4 bg-light shadow p-3 mb-5 bg-body rounded">
+                 <a class="links" href="{% url 'order' %}">
+                     <div style="width:100% ; "class="box"> <h5>Orders</h5>
+                         <h5>{{ orders_count }}</h5>
+                     </div>
+                  </a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+                  
+                  </div>
+              
+              </div>
+          
+          </div>   
+    
+       </div>
+   </div>
+</div>

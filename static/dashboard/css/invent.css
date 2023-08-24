@@ -1,0 +1,49 @@
+:root {
+    --slider-width: 400px;
+  }
+  
+  body {
+    background-color: gray;
+  }
+  
+  .slider {
+    /* width: var(--slider-width); */
+    /* height: 40px; */
+    overflow: hidden;
+    /* background-color: blue; */
+    white-space: nowrap;
+  }
+  
+  .text {
+    font-size:26px;
+    display: inline-block;
+    animation: slide 30s linear infinite;
+  }
+  
+  @keyframes slide {
+      0% {
+          transform: translateX(0%);
+      }
+  
+      50% {
+          transform: translateX(calc(-100% + var(--slider-width)));
+      }
+      
+      100% {
+          transform: translateX(0%);
+      }
+  }
+
+
+  .links{
+    text-decoration: none;
+  }
+
+  .texts{
+    color: #ffc107;
+  }
+
+
+  .box:hover{
+    background-color: #a5a0a0;
+  }

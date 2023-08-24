@@ -1,0 +1,50 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %} Order {% endblock %}
+
+{% block content %}
+{% include "partials/top-nav.html" %}
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> </div>
+    <div class="col-md-8">
+     
+    
+    <table class="table bg-light">
+  <thead>
+    <tr class="bg-primary text-warning">
+      {% comment %} <th scope="col">#</th> {% endcomment %}
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Order By</th>
+      <th scope="col">Date</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for orders in orders %}
+    <tr class="text-primary">
+      {% comment %} <th  scope="row"><a href="#"><button class="btn btn-primary btn-sm" >View</button></a></th> {% endcomment %}
+      <td>{{ orders.product }}</td>
+      <td>{{ orders.product.category }}</td>
+      <td>{{ orders.order_quantity }}</td>
+      <td>{{ orders.staff.username }}</td>
+      <td>{{ orders.date }}</td>
+      </tr>
+      {% endfor %}
+ 
+  </tbody>
+</table>
+    
+    
+   
+    
+    
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

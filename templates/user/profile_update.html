@@ -1,0 +1,70 @@
+{% extends 'partials/base.html' %}
+{% block title %}Profile Page{% endblock %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> </div>
+    <div class="col-md-8">
+    <br>
+    <br>
+    
+    <div class="card">
+  <div class="card-header bg-primary">
+   Update Profile
+  </div>
+   <div class="container"> 
+   <div class="row">
+    <div class="col-md-6">
+    <h3>Profile Information</h3></div>
+    <div class="col-md-6">
+    
+    </div>
+    </div>
+  <hr>
+  <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ user_form|crispy }}
+  {{ profile_form|crispy }}
+  
+  
+  <input class="btn btn-primary" type="submit" value="Update">
+  </form>
+  {% comment %} <div class="container">
+  <div class="row">
+  <div class="col-md-4"> 
+   <p><strong>Name</strong></p>
+  <p><strong>Email</strong></p>
+  <p><strong>Phone</strong></p>
+  <p><strong>Address</strong></p>
+  </div>
+  <div class="col-md-4"> 
+  <p> {{ user.username }}</p>
+  <p>{{ user.email }}</p>
+  <p>{{ user.profile.phone }}</p>
+  <p>{{ user.profile.address }}</p>
+  </div>
+
+  <div class="col-md-4">
+  
+  <div> {% endcomment %}
+   </div>
+    </div>
+
+</div>
+     
+  
+   
+    
+    
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

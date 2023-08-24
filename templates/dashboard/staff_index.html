@@ -1,0 +1,85 @@
+{% load crispy_forms_tags %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> 
+    <div style="height:100%;" class="bg-light">
+
+     <h5 class="text-warning text-center">Make Request</h5>
+     <div class="container">
+     <div class="row">
+     <form method="POST">
+     {% csrf_token %}
+     {{ form|crispy }}
+     <br>
+
+
+     <input style="width:96%;margin-left:5px;" class="btn btn-primary text-warning" type="submit" value="Make Request">
+
+     </form>
+     </div>
+    </div>
+   
+<hr>
+
+     </form>
+
+    </div>
+    </div>
+    <div class="col-md-8">
+     
+    
+   
+  <div  class="container bg-light">
+  
+  <div class="row">
+  
+  <div class="col-md-12">
+   <table class="table bg-light">
+  <thead>
+  <tr>
+    <h5 class="text-warning text-center">Order Records</h5>
+    </tr>
+    
+  </thead>
+  <hr>
+  
+  <tbody style="width:96%;margin-left:5px;">
+  <tr  class="bg-primary text-warning">
+      
+      <td scope="col">Product</td>
+      <td scope="col">Category</td>
+      <td scope="col">Quantity</td>
+      <td scope="col">Date</td>
+      
+    </tr>
+    <tr class="text-primary">
+     {% for order in orders %}
+     {% if order.staff == user %}
+      <td>{{ order.product.name }}</td>
+      <td>{{ order.product.category }}</td>
+      <td>{{ order.order_quantity }}</td>
+      <td>{{ order.date }}</td>
+      
+  </tr>
+  {% endif %}
+
+  {% endfor %}
+  </tbody>
+  </div>
+  
+  </div>
+    
+  </div>
+</table>
+    
+    
+   
+    
+    
+    </div>
+  </div>
+</div>

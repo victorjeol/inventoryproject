@@ -1,0 +1,29 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %} Delete {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <div class="border bg-light">
+      <div class="container">
+        <div class="row">
+        <h3>Update</h3>
+        <hr>
+        
+          <form method="POST">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <br>
+          <a class="btn btn-primary" href="{% url 'product' %}">Cancel</a>
+          <input class="btn btn-danger" type="submit" value="Update">
+          </form>
+          </div>
+      </div>
+    
+     </div>
+  </div>
+</div>
+{% endblock %}
